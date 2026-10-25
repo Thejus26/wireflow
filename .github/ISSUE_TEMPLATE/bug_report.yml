@@ -1,0 +1,126 @@
+name: 🐛 Bug report
+description: Report something that isn't working as expected in Wireflow
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please search [existing issues](https://github.com/Thejus26/wireflow/issues?q=is%3Aissue) first to avoid duplicates.
+
+        **Security vulnerability?** Don't file it here — use the [private reporting form](https://github.com/Thejus26/wireflow/security/advisories/new).
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: A clear, concise description of the bug.
+      placeholder: When I connect an output pin to a power rail, ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The smallest set of steps that reliably triggers the problem.
+      placeholder: |
+        1. Open the app and add a DIP-8 chip
+        2. Drag a wire from pin 3 to pin 8
+        3. Observe the ERC panel
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead? Include any error messages.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of Wireflow is affected?
+      options:
+        - Canvas (pan / zoom / grid snapping)
+        - Component / package rendering
+        - Wire routing
+        - ERC (electrical rules check)
+        - Import (JSON / YAML / DSL)
+        - Export (SVG / PNG / PDF / netlist)
+        - UI / accessibility
+        - Documentation
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: definition
+    attributes:
+      label: Chip / netlist definition (optional)
+      description: If the bug involves a specific diagram or component, paste a minimal definition that reproduces it.
+      render: json
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console output (optional)
+      description: Browser developer-console errors or terminal output.
+      render: shell
+
+  - type: input
+    id: version
+    attributes:
+      label: Wireflow version or commit
+      placeholder: e.g. main @ 275b9ec
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: e.g. Chrome 126, Firefox 128, Safari 17
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: e.g. Windows 11, macOS 14, Ubuntu 24.04
+    validations:
+      required: true
+
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version (if running locally)
+      placeholder: e.g. v20.11.0
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or recordings
+      description: Drag and drop images or videos here.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and didn't find a duplicate
+          required: true
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/Thejus26/wireflow/blob/main/CODE_OF_CONDUCT.md)
+          required: true

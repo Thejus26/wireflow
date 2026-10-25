@@ -1,68 +1,69 @@
-# Contributor Covenant Code of Conduct
+# Security Policy
 
-## Our pledge
+## Supported versions
 
-We as members, contributors, and maintainers pledge to make participation in Wireflow a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+Wireflow is under active development and has not yet reached a stable 1.0 release. Security fixes are applied to the latest code on `main` and released as soon as practical.
 
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+| Version | Supported |
+| --- | --- |
+| `main` (latest) | ✅ |
+| Older commits / forks | ❌ |
 
-## Our standards
+Once tagged releases exist, this table will list which release lines receive security updates.
 
-Examples of behavior that contributes to a positive environment include:
+## Reporting a vulnerability
 
-- being respectful and considerate in communication
-- welcoming different perspectives and experiences
-- giving and gracefully accepting constructive feedback
-- focusing on what is best for the community and the project
-- showing empathy toward other community members
+**Please do not report security vulnerabilities through public issues, pull requests, or discussions.**
 
-Examples of unacceptable behavior include:
+Report them privately using GitHub's private vulnerability reporting:
 
-- insulting, demeaning, or discriminatory comments
-- trolling, harassment, or personal attacks
-- public or private intimidation
-- publishing others' private information without explicit permission
-- any conduct that would reasonably be considered inappropriate in a professional setting
+👉 **[Report a vulnerability](https://github.com/Thejus26/wireflow/security/advisories/new)**
 
-## Enforcement responsibilities
+(Repository → **Security** tab → **Report a vulnerability**.)
 
-Project maintainers are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior they deem inappropriate, threatening, offensive, or harmful.
+Please include as much of the following as you can:
 
-Maintainers have the right and responsibility to remove, edit, or reject comments, commits, issues, pull requests, and other contributions that are not aligned with this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+- A description of the vulnerability and its potential impact
+- Steps to reproduce, ideally with a minimal proof of concept (for example, a crafted chip/netlist JSON or YAML file)
+- The affected version, commit, browser, and OS
+- Any suggested fix or mitigation
+
+## What to expect
+
+This is a maintainer-run project, so these are targets rather than guarantees:
+
+| Step | Target |
+| --- | --- |
+| Acknowledge your report | within 3 business days |
+| Initial assessment and severity triage | within 7 days |
+| Fix or mitigation plan | shared as soon as the issue is confirmed |
+| Public disclosure | after a fix is available, coordinated with you |
+
+We'll keep you updated as the report moves through triage and fixing, and will credit you in the advisory and release notes if you'd like (let us know how you'd like to be credited, or if you prefer to stay anonymous).
 
 ## Scope
 
-This Code of Conduct applies within all project spaces and when an individual is representing the project or its community in public or private spaces.
+Wireflow runs in the browser and processes user-supplied diagram data, so issues of particular interest include:
 
-## Enforcement
+- Cross-site scripting (XSS) or script injection via imported JSON/YAML definitions, labels, or pin names
+- Injection or unsafe content in exported files (SVG, PDF, SPICE netlists, JSON)
+- Prototype pollution or unsafe deserialization in file/DSL parsers
+- Denial of service from crafted input (for example, pathological files that hang the router or parser)
+- Vulnerable or malicious dependencies, or supply-chain issues in the build/release pipeline
+- Leaking of sensitive data via the app, logs, or CI configuration
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the project maintainers through the GitHub issue or pull request workflow, or by contacting the repository owner directly through the project’s public GitHub profile.
+Out of scope:
 
-All reports will be reviewed and investigated promptly and fairly.
+- Findings that require a compromised browser, device, or user account
+- Social engineering, physical attacks, or attacks on GitHub itself
+- Missing security headers or best-practice suggestions with no demonstrable impact
+- Automated scanner output without a working proof of concept
+- Vulnerabilities in third-party dependencies that don't affect Wireflow — please report those upstream
 
-## Enforcement guidelines
+## Safe harbor
 
-Project maintainers will follow these community impact guidelines when determining consequences for actions that violate this Code of Conduct:
+We support good-faith security research. If you follow this policy, make a good-faith effort to avoid privacy violations, data destruction, and service disruption, and give us reasonable time to respond before any public disclosure, we will not pursue or support legal action against you.
 
-1. Correction
-   - a private, written warning
-   - an explanation of why the behavior was unacceptable
-   - a request to stop or correct the behavior
+## Dependency vulnerabilities
 
-2. Warning
-   - a public warning for repeated or significant violations
-   - a temporary restriction on participation in project spaces
-
-3. Temporary ban
-   - a temporary suspension from project participation
-   - any restrictions needed to protect the community during the investigation
-
-4. Permanent ban
-   - permanent removal from participation in the project community
-   - exclusion from future project spaces and contributions
-
-## Attribution
-
-This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1.
-
-For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq.
+If you notice a known vulnerability in one of Wireflow's dependencies (for example from `npm audit` or Dependabot), a regular issue or pull request that bumps the dependency is fine, provided exploiting it against Wireflow isn't practical. If it is, please use the private reporting link above.

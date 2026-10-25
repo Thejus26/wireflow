@@ -1,0 +1,76 @@
+name: 🧩 Component / footprint request
+description: Request a new IC, package, or microcontroller definition
+title: "[Component]: "
+labels: ["component", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request a chip or package to be added to Wireflow's catalog. Pinouts must come from an official manufacturer datasheet.
+
+  - type: input
+    id: part
+    attributes:
+      label: Part number
+      placeholder: e.g. ATmega328P-PU, RP2040, NE555
+    validations:
+      required: true
+
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+      placeholder: e.g. Microchip, Raspberry Pi, Texas Instruments
+    validations:
+      required: true
+
+  - type: input
+    id: package
+    attributes:
+      label: Package / footprint
+      placeholder: e.g. DIP-28, QFN-56, LQFP-48, BGA-256
+    validations:
+      required: true
+
+  - type: input
+    id: datasheet
+    attributes:
+      label: Datasheet link
+      description: A link to the official datasheet with the pinout table.
+      placeholder: https://
+    validations:
+      required: true
+
+  - type: textarea
+    id: pins
+    attributes:
+      label: Pin definition (optional)
+      description: If you already have the pinout, paste it as a table or in Wireflow's JSON format.
+      render: json
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Variants, alternate pin functions, or anything else worth knowing.
+
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Would you like to contribute the definition?
+      options:
+        - "Yes, I'll open a pull request"
+        - "Yes, with guidance"
+        - "No, I'm just requesting it"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and didn't find a duplicate request
+          required: true
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/Thejus26/wireflow/blob/main/CODE_OF_CONDUCT.md)
+          required: true

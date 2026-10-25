@@ -1,18 +1,8 @@
-## Summary
-
-Describe the purpose of the change and the problem it solves.
-
-## Changes made
-
-- bullet list of modifications
-- include any important implementation details
-
-## Testing
-
-- [ ] Local checks run
-- [ ] Relevant manual verification completed
-- [ ] Documentation updated if needed
-
-## Notes
-
-Add any additional context, screenshots, or follow-up work here.
+blank_issues_enabled: true
+contact_links:
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/Thejus26/wireflow/security/advisories/new
+    about: Please report security issues privately here. Do not open a public issue.
+  - name: 📖 Getting help and support
+    url: https://github.com/Thejus26/wireflow/blob/main/SUPPORT.md
+    about: Read this first if you have a usage question or aren't sure where to ask.

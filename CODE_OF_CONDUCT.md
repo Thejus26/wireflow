@@ -1,103 +1,85 @@
-# Contributing to Wireflow
+# Contributor Covenant Code of Conduct
 
-Thanks for your interest in improving Wireflow. We welcome contributions from developers, hardware enthusiasts, technical writers, and designers.
+## Our Pledge
 
-This project is meant to stay approachable, maintainable, and friendly to contributors. Please help us keep that standard high by following the guidelines below.
+We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
 
-## Ways to contribute
+We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
 
-You can contribute by:
+## Our Standards
 
-- reporting bugs and documenting edge cases
-- improving documentation and examples
-- designing or refining component packages and footprints
-- enhancing routing logic and editor UX
-- fixing issues and submitting pull requests
-- reviewing pull requests and suggesting improvements
+Examples of behavior that contributes to a positive environment for our community include:
 
-## Code of conduct
+* Demonstrating empathy and kindness toward other people
+* Being respectful of differing opinions, viewpoints, and experiences
+* Giving and gracefully accepting constructive feedback
+* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
+* Focusing on what is best not just for us as individuals, but for the overall community
 
-All contributors are expected to follow our [Code of Conduct](CODE_OF_CONDUCT.md). We are committed to creating a respectful, inclusive, and productive community.
+Examples of unacceptable behavior include:
 
-## Before you start
+* The use of sexualized language or imagery, and sexual attention or advances of any kind
+* Trolling, insulting or derogatory comments, and personal or political attacks
+* Public or private harassment
+* Publishing others' private information, such as a physical or email address, without their explicit permission
+* Other conduct which could reasonably be considered inappropriate in a professional setting
 
-1. Check the open issues and pull requests to avoid duplicating work.
-2. If you want to work on a feature, open or comment on an issue first so the direction stays aligned with the project.
-3. Keep scope focused. Small, well-tested changes are easier to review and merge.
+## Enforcement Responsibilities
 
-## Development setup
+Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
 
-### Prerequisites
+Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
 
-- Node.js 18+
-- npm, pnpm, or yarn
+## Scope
 
-### Local setup
+This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
 
-```bash
-git clone https://github.com/Thejus26/wireflow.git
-cd wireflow
-npm install
-npm run dev
-```
+## Enforcement
 
-## Project expectations
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by contacting the project maintainer, [Thejus26](https://github.com/Thejus26), through the contact details on their GitHub profile. Please do not report conduct issues in public issues, pull requests, or comments.
 
-### Coding standards
+All complaints will be reviewed and investigated promptly and fairly.
 
-- Prefer readable, well-structured TypeScript and React code.
-- Keep changes focused and avoid unrelated refactors in the same pull request.
-- Add or update tests when behavior changes.
-- Follow existing naming patterns and component architecture.
-- Document non-obvious logic or design decisions when needed.
+All community leaders are obligated to respect the privacy and security of the reporter of any incident.
 
-### UI and behavior
+## Enforcement Guidelines
 
-- Preserve keyboard and pointer accessibility where feasible.
-- Keep interactions intuitive and predictable.
-- Avoid introducing visual regressions in the canvas or editor UI.
-- Ensure new features remain understandable for users who are not experts in EDA tools.
+Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
 
-### Documentation
+### 1. Correction
 
-- Update README or relevant docs when behavior or setup changes.
-- Add examples or concise notes for new features when necessary.
+**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
 
-## Pull request workflow
+**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
 
-1. Fork the repository and create a feature branch.
-2. Make a focused change with clear commit messages.
-3. Run local checks and verify the behavior you changed.
-4. Open a pull request with a clear summary, motivation, and testing notes.
-5. Be open to feedback and revise as needed.
+### 2. Warning
 
-### Pull request checklist
+**Community Impact**: A violation through a single incident or series of actions.
 
-- The change is scoped and understandable.
-- The description explains the problem and solution.
-- Relevant documentation or examples were updated.
-- The code follows the project conventions.
-- No unrelated files or churn were included.
+**Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
 
-## Issue reporting
+### 3. Temporary Ban
 
-When reporting a bug, please include:
+**Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
 
-- a short, descriptive title
-- reproduction steps
-- expected behavior
-- actual behavior
-- screenshots or recordings when useful
-- environment details such as browser, OS, and Node version
+**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
 
-For feature ideas or roadmap discussions, open a feature request or start a discussion with clear context about the use case.
+### 4. Permanent Ban
 
-## Security concerns
+**Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
 
-Please do not open public issues for security vulnerabilities. Follow the instructions in [SECURITY.md](SECURITY.md).
+**Consequence**: A permanent ban from any sort of public interaction within the community.
 
-## Recognition
+## Attribution
 
-Contributors are appreciated for the time and care they invest in improving the project. We value thoughtful changes, helpful review feedback, and constructive discussions.
+This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
 
-Thank you for helping make Wireflow better.
+Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder][Mozilla CoC].
+
+For answers to common questions about this code of conduct, see the FAQ at [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at [https://www.contributor-covenant.org/translations][translations].
+
+[homepage]: https://www.contributor-covenant.org
+[v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
+[Mozilla CoC]: https://github.com/mozilla/diversity
+[FAQ]: https://www.contributor-covenant.org/faq
+[translations]: https://www.contributor-covenant.org/translations

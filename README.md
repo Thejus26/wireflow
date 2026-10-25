@@ -6,7 +6,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-**Wireflow** bridges the gap between heavyweight EDA suites (like KiCad, Altium, or EasyEDA) and generic flowchart engines (like Mermaid or Draw.io). It gives hardware developers, technical writers, educators, and embedded engineers a dedicated tool to sketch ICs, assign pin functions, route clean nets, and export publication-ready diagrams for datasheets and documentation.
+**Wireflow** bridges the gap between heavyweight EDA suites (like KiCad, Altium, or EasyEDA) and generic flowchart engines (like Mermaid or Draw.io). It gives hardware developers, technical writers, and product teams a way to design component pinouts, wiring diagrams, and logic relationships without leaving the browser.
 
 ---
 
@@ -32,7 +32,7 @@
 
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/your-username/wireflow.git](https://github.com/your-username/wireflow.git)
+git clone https://github.com/Thejus26/wireflow.git
 
 # 2. Enter project directory
 cd wireflow
@@ -42,7 +42,6 @@ npm install
 
 # 4. Start local development server
 npm run dev
-
 ```
 
 Visit `http://localhost:5173` in your browser to launch the canvas.
@@ -55,7 +54,7 @@ Every chip in Wireflow can be defined using a clean, readable JSON format:
 
 ```json
 {
-  "$schema": "[https://wireflow.dev/schema/v1/chip.json](https://wireflow.dev/schema/v1/chip.json)",
+  "$schema": "https://wireflow.dev/schema/v1/chip.json",
   "id": "u1_555",
   "name": "NE555",
   "label": "Precision Timer",
@@ -72,7 +71,6 @@ Every chip in Wireflow can be defined using a clean, readable JSON format:
     { "pin": 8, "name": "VCC",   "type": "power",          "side": "right" }
   ]
 }
-
 ```
 
 ---
@@ -103,24 +101,20 @@ Wireflow separates visual rendering, state management, and geometry computation:
 
 ---
 
-## 🤝 Contributing
+## 🤝 Community & Contributing
 
-We welcome contributions of all kinds—from new IC footprints and routing optimization to UI polish and bug reports.
+We welcome contributions of all kinds—from new IC footprints and routing optimization to UI polish, accessibility improvements, and bug reports.
 
-1. Fork the project.
-2. Create your feature branch (`git checkout -b feature/cool-footprint`).
-3. Commit your changes (`git commit -m 'Add QFN-32 package support'`).
-4. Push to the branch (`git push origin feature/cool-footprint`).
-5. Open a Pull Request.
+- [Contributing Guide](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md)
+- [Getting Support](SUPPORT.md)
+- [Issue Templates](.github/ISSUE_TEMPLATE)
 
-Please read our [Contributing Guidelines](https://www.google.com/search?q=CONTRIBUTING.md) and [Code of Conduct](https://www.google.com/search?q=CODE_OF_CONDUCT.md) before submitting code.
+Please read our contributor guidance before submitting code, proposing changes, or filing a bug report.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
-
-```
-
-```
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.

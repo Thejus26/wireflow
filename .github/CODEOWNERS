@@ -1,0 +1,8 @@
+# Default owner for everything in the repository.
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+*                       @Thejus26
+
+# Community health and security-sensitive files
+/.github/               @Thejus26
+/SECURITY.md            @Thejus26
+/CODE_OF_CONDUCT.md     @Thejus26
