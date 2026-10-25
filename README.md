@@ -1,4 +1,3 @@
-```markdown
 # ⚡ Wireflow
 
 > A lightweight, modern canvas for drafting chip pinouts, IC packages, and electronic schematics directly in the browser.
