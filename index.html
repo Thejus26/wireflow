@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wireflow – Mermaid-like Embedded Systems Diagrams</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="panel controls">
+        <div class="header-row">
+          <div>
+            <p class="eyebrow">Wireflow</p>
+            <h1>Embedded diagram DSL</h1>
+          </div>
+          <button id="renderBtn" class="primary">Render</button>
+        </div>
+
+        <label for="source" class="label">Wireflow source</label>
+        <textarea id="source" spellcheck="false">wireflow
+  chip mcu "ESP32" at 120,100 size 180x220
+  chip imu "BMP280" at 520,100 size 150x130
+  chip relay "12V Relay" at 520,300 size 180x100
+
+  mcu.GPIO4 --> imu.SDA
+  mcu.GPIO5 --> imu.SCL
+  mcu.VCC --> imu.VCC
+  mcu.GND --> imu.GND
+  mcu.GPIO18 --> relay.COIL
+end</textarea>
+
+        <div class="examples">
+          <h2>Example patterns</h2>
+          <ul>
+            <li><code>chip name "Label" at x,y size w x h</code></li>
+            <li><code>module name "Label" at x,y size w x h</code></li>
+            <li><code>source.pin --> target.pin</code></li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="panel preview-wrap">
+        <svg id="diagram" viewBox="0 0 1200 700" aria-label="Wireflow diagram preview"></svg>
+      </main>
+    </div>
+
+    <script src="wireflow.js"></script>
+  </body>
+</html>
