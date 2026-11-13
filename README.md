@@ -6,7 +6,9 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-**Wireflow** bridges the gap between heavyweight EDA suites (like KiCad, Altium, or EasyEDA) and generic flowchart engines (like Mermaid or Draw.io). It gives hardware developers, technical writers, and AI systems a common, text-first language for describing embedded electronics and control systems.
+**Wireflow** is a Mermaid-style diagram engine for embedded electronics. You describe chips, pins, and wires in a small text language, and Wireflow renders the diagram as SVG, the same workflow Mermaid gives you for flowcharts.
+
+It bridges the gap between heavyweight EDA suites (like KiCad, Altium, or EasyEDA) and generic diagram-as-code tools (like Mermaid or Draw.io). It gives hardware developers, technical writers, and AI systems a common, text-first language for describing embedded electronics and control systems.
 
 ---
 
@@ -72,9 +74,9 @@ Every chip in Wireflow can be defined using a clean, readable JSON format:
 
 ---
 
-## 🧠 Mermaid-like Wireflow Syntax for AI Diagrams
+## 🧠 Mermaid-style Syntax
 
-To make Wireflow easy for LLMs and diagram generators, we support a Mermaid-inspired text DSL where a model can describe a connected system with simple declarative statements.
+Like Mermaid, Wireflow diagrams are plain text: a header line, then one declarative statement per line, with `-->` arrows for connections. Because the format is compact and predictable, LLMs and diagram generators can write it reliably.
 
 ```wireflow
 wireflow
@@ -100,12 +102,24 @@ This syntax is intentionally compact and readable so an AI can generate diagrams
 
 ### Syntax model
 
-- `chip <id> "<label>" at x,y size w x h`
-- `module <id> "<label>" at x,y size w x h`
-- `<chipId>.<pinName> --> <chipId>.<pinName>`
-- optional `wireflow` / `end` block delimiters
+- `chip <id> "<label>" at x,y size WxH`: declares an IC. `size` is optional.
+- `module <id> "<label>" at x,y size WxH`: declares a larger module or board. `size` is optional.
+- `<chipId>.<pinName> --> <chipId>.<pinName>`: connects two pins. Pins are created automatically the first time they are used.
+- `wireflow` header and `end` footer: optional block delimiters.
+- `// comment`: ignored by the parser.
 
-This keeps the language close to Mermaid's text-first style while remaining hardware-aware and pin-aware.
+### How it compares to Mermaid
+
+| | Mermaid | Wireflow |
+| --- | --- | --- |
+| Text-first, one statement per line | ✅ | ✅ |
+| `-->` arrows for connections | ✅ | ✅ |
+| Live render to SVG in the browser | ✅ | ✅ |
+| Nodes are... | generic boxes | chips and modules with named pins |
+| Edges connect... | node to node | pin to pin (`mcu.GPIO4 --> imu.SDA`) |
+| Layout | automatic | manual `at x,y` coordinates today; automatic layout is planned |
+
+See the [Roadmap](#️-roadmap) for the Mermaid features Wireflow is still missing.
 
 ---
 
@@ -130,8 +144,11 @@ Wireflow separates visual rendering, state management, and geometry computation:
 * [x] Dual In-line Package (DIP) component renderer
 * [x] Manual orthogonal wire routing
 * [ ] Automated A* obstacle-avoiding router
-* [ ] Mermaid-like text parsing for hardware diagrams
-* [ ] Text-to-diagram DSL parser (Mermaid-style syntax for ICs)
+* [x] Mermaid-style text parsing for hardware diagrams (`chip`, `module`, `pin --> pin`)
+* [ ] Automatic layout, so `at x,y` becomes optional like in Mermaid
+* [ ] Mermaid-style syntax extras: edge labels (`-->|I2C|`), `subgraph`, `%%` comments, and `classDef` styling
+* [ ] Themes and syntax errors with line numbers
+* [ ] Embeddable library API (`wireflow.initialize()` and `wireflow.render(id, text)`) that renders `<pre class="wireflow">` blocks
 * [ ] SPICE netlist export (.cir)
 * [ ] Pre-built catalog for popular microcontrollers (ESP32, RP2040, ATmega328P)
 
@@ -159,4 +176,4 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ## Demo
 
-The repository now includes a browser demo in `index.html` that renders Mermaid-like embedded-system diagrams directly from DSL text. Open it locally and edit the `textarea` to generate hardware diagrams automatically.
+The repository includes a browser demo in `index.html` that renders Mermaid-style embedded-system diagrams directly from Wireflow text, the way the Mermaid live editor does for flowcharts. Open it locally and edit the `textarea` to see the diagram update.
